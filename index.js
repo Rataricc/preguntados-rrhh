@@ -116,7 +116,7 @@ const QUESTIONS = [
 ];
 
 const TOTAL = QUESTIONS.length;
-const TIME = 20;
+const TIME = 40;
 const SHEET_DELAY = 900; // ms para ver si acertaste antes de que aparezca la explicación
 let order, idx, score, results, timerId, sheetId, timeLeft, answered;
 
