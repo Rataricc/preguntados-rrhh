@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Preguntados RRHH</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- INICIO -->
+        <section id="start" class="screen active">
+            <div class="card">
+                <div class="logo">👥🧠</div>
+                <h1>Preguntados RRHH</h1>
+                <p class="sub">¿Cuánto sabés sobre la gestión de Recursos Humanos? ¡Jugá y descubrilo!</p>
+                <div class="chips">
+                    <span class="chip">10 preguntas</span>
+                    <span class="chip">⏱️ 20 seg c/u</span>
+                    <span class="chip">💡 Aprendé jugando</span>
+                </div>
+                <button class="btn" id="playBtn">¡JUGAR!</button>
+            </div>
+        </section>
+
+        <!-- JUEGO -->
+        <section id="game" class="screen">
+            <div class="top">
+                <span class="pill" id="qCount">Pregunta 1/10</span>
+                <span class="pill" id="scoreLive">⭐ 0</span>
+            </div>
+            <div class="bar"><i id="bar"></i></div>
+            <div class="card">
+                <div class="cat" id="cat">
+                    <span class="em" id="catEm">📚</span><span id="catName">Categoría</span>
+                    <span class="timer" id="timer">⏱ 20</span>
+                </div>
+                <div class="question" id="question"></div>
+                <div class="opts" id="opts"></div>
+            </div>
+        </section>
+
+        <!-- RESULTADO -->
+        <section id="end" class="screen">
+            <div class="card">
+                <div class="score"><span id="finalScore">0</span><small>/10</small></div>
+                <div class="stars" id="stars"></div>
+                <div class="msg" id="finalMsg"></div>
+                <div class="detail" id="finalDetail"></div>
+                <div class="review" id="review"></div>
+                <button class="btn" id="againBtn">🔄 JUGAR DE NUEVO</button>
+                <br>
+                <button class="btn" id="startBtn">🔄 INICIO</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Explicación después de responder -->
+    <div class="overlay" id="overlay">
+        <div class="sheet">
+            <div class="head" id="sheetHead"></div>
+            <div class="txt" id="sheetTxt"></div>
+            <button class="btn blue" id="nextBtn">SIGUIENTE ➜</button>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
