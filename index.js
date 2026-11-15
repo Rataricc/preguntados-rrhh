@@ -1,116 +1,117 @@
 const CATS = {
-    concepto: { name: "Conceptos básicos", em: "📘", color: "#5b2be0" },
-    reclu: { name: "Reclutamiento", em: "🔎", color: "#2b7cf0" },
-    entre: { name: "Entrevistas", em: "🎤", color: "#e0457b" },
-    ingreso: { name: "Ingreso a la empresa", em: "🚪", color: "#f08c00" },
-    capa: { name: "Capacitación", em: "🎓", color: "#12a594" },
-    clima: { name: "Clima laboral", em: "☀️", color: "#e8590c" },
-    desem: { name: "Desempeño", em: "📈", color: "#7048e8" },
-    sueldos: { name: "Sueldos y beneficios", em: "💰", color: "#2f9e44" },
-    segu: { name: "Seguridad e higiene", em: "🦺", color: "#c92a2a" },
-    conflic: { name: "Conflictos y comunicación", em: "🤝", color: "#1971c2" }
+    datos: { name: "Datos personales", em: "📇", color: "#5b2be0" },
+    contenido: { name: "Contenido del CV", em: "📄", color: "#2b7cf0" },
+    perfil: { name: "Perfil profesional", em: "👤", color: "#e0457b" },
+    formato: { name: "Formato y diseño", em: "🎨", color: "#f08c00" },
+    experiencia: { name: "Experiencia laboral", em: "💼", color: "#12a594" },
+    diseno: { name: "Presentación", em: "✨", color: "#e8590c" },
+    errores: { name: "Buenas prácticas", em: "⚠️", color: "#7048e8" },
+    sin_experiencia: { name: "Primer empleo", em: "🚀", color: "#2f9e44" },
+    contacto: { name: "Medios de contacto", em: "📧", color: "#c92a2a" },
+    extension: { name: "Extensión del CV", em: "📏", color: "#1971c2" }
 };
 
 // La primera opción de cada pregunta es la correcta; se mezclan al jugar.
 const QUESTIONS = [
     {
-        cat: "concepto",
-        q: "¿Qué hace principalmente el área de Recursos Humanos de una empresa?",
-        o: ["Se ocupa de las personas que trabajan en la empresa: sumarlas, cuidarlas y desarrollarlas",
-            "Se ocupa solamente de limpiar y mantener la oficina",
-            "Vende los productos o servicios al público",
-            "Arregla las computadoras y los sistemas"],
-        e: "RRHH gestiona a las personas: desde que se las busca y contrata hasta que se capacitan, se les paga y se cuida su bienestar. Las personas son el recurso más valioso de una organización."
+        cat: "datos",
+        q: "¿Qué datos personales deben aparecer en un currículum vitae?",
+        o: [
+            "Nombre, apellido, teléfono y correo electrónico",
+            "DNI, número de tarjeta y contraseñas",
+            "Nombre de familiares y sus teléfonos"
+        ],
+        e: "Los datos de contacto y identificación básica son esenciales para que la empresa pueda comunicarse con vos de forma rápida y profesional."
     },
-
     {
-        cat: "reclu",
-        q: "¿Qué es el \"reclutamiento\"?",
-        o: ["Atraer a personas interesadas en trabajar en la empresa, por ejemplo con avisos laborales",
-            "Despedir a los empleados que no rinden",
-            "Pagar el sueldo a fin de mes",
-            "Hacer un festejo de fin de año"],
-        e: "El reclutamiento es el primer paso: se publican búsquedas (redes, portales de empleo, recomendaciones) para que lleguen muchos candidatos. Después viene la selección, donde se elige a la persona más adecuada."
+        cat: "contenido",
+        q: "¿Qué información no debería incluirse en un CV?",
+        o: [
+            "Contraseñas de redes sociales",
+            "Formación académica",
+            "Experiencia laboral"
+        ],
+        e: "Nunca debes incluir información privada o sensible como contraseñas. El CV debe centrarse exclusivamente en tu perfil profesional y académico."
     },
-
     {
-        cat: "entre",
-        q: "¿Para qué sirve una entrevista de trabajo?",
-        o: ["Para conocer al candidato y ver si sus capacidades y su perfil se ajustan al puesto",
-            "Para decidir quién cae mejor sin mirar su experiencia",
-            "Solo para completar un trámite",
-            "Para explicar cómo se usa la fotocopiadora"],
-        e: "En la entrevista la empresa evalúa conocimientos, experiencia y actitudes, y el candidato también conoce la empresa. Es una conversación en ambos sentidos, y la decisión debe basarse en el perfil buscado."
+        cat: "perfil",
+        q: "¿Para qué sirve el perfil profesional?",
+        o: [
+            "Para presentar brevemente quiénes somos, nuestras habilidades y objetivos",
+            "Para contar toda nuestra vida personal",
+            "Para escribir frases sin relación con el trabajo"
+        ],
+        e: "El perfil profesional es una breve introducción al inicio del CV que le permite al reclutador entender rápidamente quién sos y qué podés aportar."
     },
-
     {
-        cat: "ingreso",
-        q: "Una persona recién entra a trabajar y le explican la cultura de la empresa, sus tareas y la presentan al equipo. ¿Cómo se llama este proceso?",
-        o: ["Inducción u onboarding",
-            "Despido",
-            "Auditoría contable",
-            "Liquidación de sueldos"],
-        e: "La inducción (u onboarding) ayuda a que el nuevo empleado se adapte rápido, se sienta bienvenido y sepa qué se espera de él. Una buena inducción reduce errores y la rotación de personal."
+        cat: "formato",
+        q: "¿Es necesario incluir una fotografía en el currículum?",
+        o: [
+            "Es opcional, salvo que la empresa la solicite",
+            "Sí, siempre es obligatoria",
+            "No, nunca se puede colocar"
+        ],
+        e: "Depende de las normas del país o de la empresa, pero por regla general la foto es opcional a menos que la oferta de empleo lo pida expresamente."
     },
-
     {
-        cat: "capa",
-        q: "¿Qué busca la capacitación del personal?",
-        o: ["Que los empleados aprendan y mejoren sus habilidades para hacer mejor su trabajo",
-            "Que los empleados trabajen más horas sin cobrar",
-            "Que los empleados se vayan de la empresa",
-            "Que los empleados no hagan preguntas"],
-        e: "Capacitar es invertir en las personas: cursos, talleres o práctica guiada que mejoran el desempeño, aumentan la motivación y preparan a la gente para crecer dentro de la empresa."
+        cat: "experiencia",
+        q: "¿Cómo debemos presentar la experiencia laboral?",
+        o: [
+            "Colocando primero la experiencia más reciente",
+            "Sin indicar dónde trabajamos",
+            "Inventando experiencias para llamar la atención"
+        ],
+        e: "El orden cronológico inverso (lo más reciente arriba) es el estándar porque le permite al reclutador ver de inmediato tu situación laboral actual."
     },
-
     {
-        cat: "clima",
-        q: "¿Qué es el \"clima laboral\"?",
-        o: ["Cómo se sienten las personas en su ambiente de trabajo: las relaciones, el trato y el ánimo general",
-            "La temperatura del aire acondicionado de la oficina",
-            "El pronóstico del tiempo para ir a trabajar",
-            "La cantidad de computadoras que hay"],
-        e: "Un buen clima laboral (respeto, comunicación, compañerismo) hace que la gente trabaje con más ganas y se quede más tiempo. RRHH suele medirlo con encuestas y trabajar para mejorarlo."
+        cat: "diseno",
+        q: "¿Qué características debe tener un buen currículum?",
+        o: [
+            "Información clara, ordenada y actualizada",
+            "Muchos colores, dibujos y diferentes tipos de letras",
+            "Información desordenada y difícil de leer"
+        ],
+        e: "La claridad y el orden facilitan la lectura rápida de los reclutadores, quienes suelen dedicar pocos segundos a cada CV en el primer filtro."
     },
-
     {
-        cat: "desem",
-        q: "¿Para qué se hace una evaluación de desempeño?",
-        o: ["Para analizar cómo trabaja cada persona, reconocer sus logros y ayudarla a mejorar",
-            "Para castigar a los empleados",
-            "Para decidir el color del uniforme",
-            "Para elegir el menú del comedor"],
-        e: "La evaluación de desempeño compara lo que se esperaba con lo que se logró. Bien hecha, sirve para felicitar, dar feedback, detectar necesidades de capacitación y planificar ascensos."
+        cat: "errores",
+        q: "¿Qué cosas debemos evitar al elaborar un CV?",
+        o: [
+            "Mentir sobre nuestros estudios o experiencia",
+            "Revisar la ortografía",
+            "Adaptarlo al puesto al que queremos postularnos"
+        ],
+        e: "La honestidad es fundamental. Mentir en un currículum destruye la confianza y suele descubrirse fácilmente durante los procesos de selección o verificación de referencias."
     },
-
     {
-        cat: "sueldos",
-        q: "En Argentina, el aguinaldo (SAC) es un pago extra que los trabajadores en relación de dependencia cobran...",
-        o: ["En dos cuotas por año: junio y diciembre",
-            "Todos los meses",
-            "Solo cuando el jefe quiere",
-            "Una vez cada cinco años"],
-        e: "El Sueldo Anual Complementario (aguinaldo) se paga en dos cuotas al año, en junio y diciembre. Calcular y pagar sueldos y aguinaldos correctamente es otra tarea clave de RRHH (la liquidación de sueldos)."
+        cat: "sin_experiencia",
+        q: "Si nunca trabajaste, ¿qué información podés colocar en tu CV?",
+        o: [
+            "Estudios, cursos, habilidades, prácticas y voluntariados",
+            "Nada, porque no tenés experiencia",
+            "Experiencias laborales inventadas"
+        ],
+        e: "Todos empezamos sin experiencia formal. Resaltar tus estudios, proyectos académicos, cursos extracurriculares y voluntariados demuestra proactividad y ganas de aprender."
     },
-
     {
-        cat: "segu",
-        q: "¿Qué es la seguridad e higiene laboral?",
-        o: ["Las medidas para prevenir accidentes y enfermedades en el trabajo y cuidar la salud de todos",
-            "Una regla para que nadie pueda tomarse vacaciones",
-            "Un curso de cocina para el personal",
-            "Un permiso para llegar tarde"],
-        e: "Incluye cosas como usar casco o guantes cuando corresponde, tener salidas de emergencia señalizadas, matafuegos y buenas posturas de trabajo. Cuidar a las personas es una obligación de la empresa."
+        cat: "contacto",
+        q: "¿Qué importancia tiene el correo electrónico en un CV?",
+        o: [
+            "Debe ser profesional y estar actualizado",
+            "Puede ser cualquier apodo gracioso",
+            "No hace falta colocar ninguno"
+        ],
+        e: "Un correo profesional (por ejemplo, nombre.apellido@email.com) da una buena primera impresión, a diferencia de direcciones informales o con apodos antiguos."
     },
-
     {
-        cat: "conflic",
-        q: "Dos compañeros discuten seguido y el equipo se ve afectado. ¿Qué haría un buen profesional de RRHH?",
-        o: ["Escuchar a ambos, dialogar y buscar una solución en la que los dos estén de acuerdo",
-            "Ignorar el problema para que se arregle solo",
-            "Contar el conflicto a todos los demás empleados",
-            "Despedir a uno sin hablar con nadie"],
-        e: "RRHH actúa como mediador: escucha con respeto, es imparcial y busca acuerdos. Resolver los conflictos a tiempo mejora el clima laboral y evita problemas más grandes."
+        cat: "extension",
+        q: "¿Qué extensión es recomendable para un currículum vitae?",
+        o: [
+            "Entre 1 y 2 páginas, procurando que sea claro y relevante",
+            "10 páginas como mínimo",
+            "Todas las páginas que sean necesarias, aunque haya información repetida"
+        ],
+        e: "Un CV conciso y directo facilita la lectura. Lo ideal es resumir la trayectoria más relevante en una o máximo dos páginas."
     }
 ];
 
